@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: altais-service
+spec:
+  type: ClusterIP
+  selector:
+    app: altaisws
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+

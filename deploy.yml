@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: altaisws-dep
+spec:
+  selector:
+    matchLabels:
+      app: altaisws
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: altaisws
+    spec:
+      containers:
+      - name: randint-ws
+        image: "alpha3b1/randint-ws"
+        ports:
+           - containerPort: 5000
